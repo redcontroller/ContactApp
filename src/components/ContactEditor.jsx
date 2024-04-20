@@ -23,7 +23,7 @@ const ContactEditor = () => {
     const nameRef = useRef();
     const contactRef = useRef();
     const [info, dispatch] = useReducer(reducer, initialState);
-    const {onCreate} = useContext(ContactDispatchContext);
+    const { onCreate } = useContext(ContactDispatchContext);
 
     // useCallback을 사용하여 handleChange 메모이제이션
     const handleChange = useCallback((e) => {
