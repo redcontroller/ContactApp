@@ -16,7 +16,7 @@ npm run dev  // 실행
 [코드샌드박스에서 실행](https://codesandbox.io/p/sandbox/contact-app-q5dnch)
 
 <div align="center">
-  <img width="500px" src="https://github.com/redcontroller/ContactApp/assets/11751089/3180a06a-90e7-4bcf-b0a5-132b9428770e" />
+  <img width="800px" src="https://github.com/redcontroller/ContactApp/assets/11751089/3180a06a-90e7-4bcf-b0a5-132b9428770e" />
 </div>
 
 <br >
@@ -31,8 +31,10 @@ npm run dev  // 실행
   - useMemo, React.memo, useCallback 활용
 ## 주요 기능
 
-### (1) 추가 및 즐겨찾기 기능
+|                **추가 및 즐겨찾기**           |     **연락처 검색**   |     **모바일 360px 반응형**     |
+| :----------------------------------: | :--------------: | :--------------: |
+| <img width="315px" src="https://github.com/redcontroller/onebite-react/assets/11751089/6d47c391-3d9b-4d42-be39-9e3ef494e295" /> | <img width="315px" src="https://github.com/redcontroller/onebite-react/assets/11751089/400def27-cf12-430e-b5e2-fbe839f0524b" /> | <img width="315px" src="https://github.com/redcontroller/onebite-react/assets/11751089/faa7871a-3913-4bfe-8146-4648e32b905d" /> |
 
-|            **추가 및 즐겨찾기**            |     **연락처 검색**     |     **모바일 360px 반응형**     |
-| :----------------------------------: | :------------------- : | :--------------------: |
-| <img width="240px" src="https://github.com/redcontroller/onebite-react/assets/11751089/6d47c391-3d9b-4d42-be39-9e3ef494e295" /> | <img width="240px" src="https://github.com/redcontroller/onebite-react/assets/11751089/400def27-cf12-430e-b5e2-fbe839f0524b" /> | <img width="240px" src="https://github.com/redcontroller/onebite-react/assets/11751089/faa7871a-3913-4bfe-8146-4648e32b905d" /> |
+
+<br>
+<br>
