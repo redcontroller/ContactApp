@@ -4,7 +4,7 @@ import iconFavorite from '../assets/icon_favorite.png';
 import iconBlankFavorite from '../assets/icon_blank_favorite.png';
 import { ContactDispatchContext } from '../App';
 
-const ContactItem = ({id, name, favorite, contact}) => {
+const ContactItem = ({ id, name, favorite, contact }) => {
     const { onUpdate, onDelete } = useContext(ContactDispatchContext);
 
     return (
