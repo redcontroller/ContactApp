@@ -10,10 +10,9 @@ npm run dev  // 실행
 ```
 
 <br >
-<br > 
 
 # CodeSandbox
-[코드샌드박스에서 실행](https://codesandbox.io/p/sandbox/contact-app-q5dnch)
+[>>> (링크) 코드샌드박스에서 실행](https://codesandbox.io/p/sandbox/contact-app-q5dnch)
 
 <div align="center">
   <img width="800px" src="https://github.com/redcontroller/ContactApp/assets/11751089/3180a06a-90e7-4bcf-b0a5-132b9428770e" />
@@ -23,13 +22,16 @@ npm run dev  // 실행
 <br > 
 
 # 주요 기능 및 특징
-## 특징
+**특징**
 - React Web Application
 - Chance 라이브러리를 통한 더미 연락처 생성
 - useReducer와 Context를 이용한 상태관리
 - React 렌더링 최적화
   - useMemo, React.memo, useCallback 활용
-## 주요 기능
+
+<br> 
+
+**주요 기능**
 
 |                **추가 및 즐겨찾기**           |     **연락처 검색**   |     **모바일 360px 반응형**     |
 | :----------------------------------: | :--------------: | :--------------: |
