@@ -22,7 +22,6 @@ const initialState = { name: "", contact: "" };
 const ContactEditor = () => {
     const nameRef = useRef();
     const contactRef = useRef();
-    // useCallback을 사용하여 reducer 함수 메모이제이션
     const [info, dispatch] = useReducer(reducer, initialState);
     const {onCreate} = useContext(ContactDispatchContext);
 
