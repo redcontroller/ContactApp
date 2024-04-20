@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: fit-content;
+    font-family: 'GmarketSansMedium';
+    margin: 0 auto;
+}
+
+input {
+    height: 45px;
+    font-family: inherit;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: 2px solid rgb(37, 147, 255);
+}
+
+button {
+    font-family: inherit;
+    font-weight: 700;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button:focus {
+    outline-color: rgb(37, 147, 255);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.App {
+    min-width: 715px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.App > h1 {
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+@media (max-width: 360px) {
+    .App {
+        min-width: 330px;
+        gap: 10px;
+    }
+
+    .App>h1 {
+        font-size: 26px;
+        margin: 15px 0 0;
+    }
+
+    button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    input {
+        padding: 5px;
+    }
+}

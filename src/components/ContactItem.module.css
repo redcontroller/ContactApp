@@ -1,0 +1,81 @@
+.li {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+.wrapper span {
+    display: inline-block;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.wrapper .name {
+    width: 180px;
+    padding: 0 20px;
+}
+
+.wrapper .contact {
+    width: 200px;
+    padding: 0 20px;
+    border-left: 2px solid lightgray;
+}
+
+.li > img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.removeButton {
+    margin-left: 50px;
+}
+
+@media (max-width: 360px) {
+    .li {
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .li>img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+    }
+
+    .li>span {
+        white-space: wrap;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrapper .name {
+        width: 165px;
+        padding: 0 5px;
+    }
+    
+    .wrapper .contact {
+        width: 165px;
+        padding: 0 5px;
+        margin-left: 10px;
+        border-left: 2px solid lightgray;
+    }
+
+    .removeButton {
+        margin-left: 10px;
+    }
+}

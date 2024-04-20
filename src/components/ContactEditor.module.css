@@ -1,0 +1,46 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.form > h2 {
+    font-size: 16px;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+.wrap input:nth-child(1) {
+    width: 200px;
+}
+
+.wrap input:nth-child(2) {
+    flex: 1;
+}
+
+.form > button {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 360px) {
+    .form {
+        padding: 10px 15px;
+    }
+
+    .wrap > input:nth-child(1) {
+        width: 120px;
+    }
+
+    .wrap > input:nth-child(2) {
+        flex: 1;
+    }
+}
