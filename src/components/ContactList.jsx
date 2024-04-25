@@ -1,24 +1,23 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import { useContactState } from "../hooks/contact";
 import ContactItem from './ContactItem';
 import styles from './ContactList.module.css';
-import { ContactStateContext } from '../App';
-
 
 const ContactList = () => {
+    const contacts = useContactState();
     const [search, setSearch] = useState("");
-    const contacts = useContext(ContactStateContext);
+    // (RegExp.prototype.ignoreCase) "i" 플래그는 문자열 매칭에서 대소문자를 구분하지 않음
+    const searchPattern = new RegExp(search, "i");
 
     const onSearch = (e) => {
         setSearch(e.target.value)
     };
 
-    const filteredData = () => {
-        if (search === "") {
-            return contacts;
-        } else {
-            return contacts.filter(contact => contact.name.toLowerCase().includes(search.toLowerCase()));
-        }
-    };
+    const filteredData = (
+        search === ""
+            ? contacts
+            : contacts.filter((contact) => searchPattern.test(contact.name))
+    ).sort((a, b) => b.favorite - a.favorite);
 
     return (
         <ul className={styles.ul}>
@@ -28,11 +27,8 @@ const ContactList = () => {
                 value={search}
                 onChange={onSearch}
             />
-            {filteredData().map((contact) =>
-                <ContactItem
-                    key={contact.id}
-                    {...contact}
-                />
+            {filteredData.map((contact) =>
+                <ContactItem key={contact.id} {...contact} />
             )}
         </ul>
     );

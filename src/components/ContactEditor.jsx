@@ -1,86 +1,51 @@
-import { useReducer, useRef, useCallback, memo, useContext, useMemo } from 'react';
+import { useRef, useCallback, useContext } from 'react';
+import { useContactDispatch } from '../hooks/contact';
 import styles from "./ContactEditor.module.css";
-import { ContactDispatchContext } from '../App';
-
-function reducer (state, action) {
-    switch (action.type) {
-        case "EDIT":
-            return {
-                ...state,
-                [action.target.name]: action.target.value
-            };
-        case "SUBMIT":
-            return { name: "", contact: ""};
-        default:
-            return state;
-    }
-}
-const initialState = { name: "", contact: "" };
 
 const ContactEditor = () => {
-    const nameRef = useRef();
-    const contactRef = useRef();
-    const [info, dispatch] = useReducer(reducer, initialState);
-    const { onCreate } = useContext(ContactDispatchContext);
+    const { onCreate } = useContactDispatch();
 
-    // useCallback을 사용하여 handleChange 메모이제이션
-    const handleChange = useCallback((e) => {
-        dispatch({
-            type: "EDIT",
-            target: e.target,
-        });
+    const inputRefMap = useRef(new Map());
+    // useCallback을 사용하여 setInputRef 메모이제이션
+    const setInputRef = useCallback((node) => {
+        if (node !== null) inputRefMap.current.set(node.name, node);
     }, []);
 
-    const handleClick = useCallback((e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
 
-        if (info.name && info.contact) {
-            onCreate(info.name, info.contact);
-            dispatch({
-                type: "SUBMIT",
-            });
-        } else if (!info.name) {
-            nameRef.current.focus();
-        } else if (!info.contact) {
-            contactRef.current.focus();
-        }
-    }, [info.name, info.contact, onCreate]);
+        const formData = new FormData(e.currentTarget); // [object FormData]
 
-    const handleKeyDown = useCallback((e) => {
-        if (e.key === 'Enter') {
-            handleClick(e);
+        // formData Web API 활용
+        for (const [name, value] of formData) {
+            if (value === "") return inputRefMap.current.get(name)?.focus();
         }
-    }, [handleClick]);
+
+        const newContact = Object.fromEntries(formData.entries());
+        onCreate(newContact);
+        e.currentTarget.reset();
+    };
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={onSubmit}>
             <h2>💡 Add Contact</h2>
             <div className={styles.wrap}>
                 <input
-                    ref={nameRef}
+                    ref={setInputRef}
                     name="name"
                     placeholder="이름 ..." 
-                    value={info.name}
-                    onChange={handleChange}
-                    onKeyDown={handleKeyDown}
+                    required
                 />
                 <input
-                    ref={contactRef}
+                    ref={setInputRef}
                     name="contact"
                     placeholder="연락처(이메일) ..."
-                    value={info.contact}
-                    onChange={handleChange}
-                    onKeyDown={handleKeyDown}
+                    required
                 />
             </div>
-            <button
-                type='submit'
-                onClick={handleClick}
-            >
-                Add
-            </button>
+            <button type='submit'>Add</button>
         </form>
     );
 };
 
-export default memo(ContactEditor);
+export default ContactEditor;
