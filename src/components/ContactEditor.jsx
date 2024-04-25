@@ -16,7 +16,7 @@ const ContactEditor = () => {
 
         const formData = new FormData(e.currentTarget); // [object FormData]
 
-        // formData Web API 활용
+        // formData Web API 활용 (fields/values 쌍들의 set 구조)
         for (const [name, value] of formData) {
             if (value === "") return inputRefMap.current.get(name)?.focus();
         }
