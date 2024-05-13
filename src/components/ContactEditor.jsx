@@ -1,4 +1,4 @@
-import { useRef, useCallback, useContext } from 'react';
+import { useRef, useCallback } from 'react';
 import { useContactDispatch } from '../hooks/contact';
 import styles from "./ContactEditor.module.css";
 

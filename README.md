@@ -4,6 +4,10 @@
 연락처를 관리하는 웹 어플리케이션 UI
 ```
 
+- 개발 기간: 2024.04.17 ~ 2024.04.25 (9일)
+- 스택: React.js, Chance, Vite, Vercel
+- 배포 URL: [https://contact-app-wine-alpha.vercel.app/](https://contact-app-wine-alpha.vercel.app/)
+
 **APP 설치 및 실행**
 
 ```bash
@@ -29,10 +33,11 @@ npm run dev  // 실행
 **특징**
 
 - React Web Application
+- 연락처 기능: 추가, 삭제, 즐겨찾기, 이름 검색
 - Chance 라이브러리를 통한 더미 연락처 생성
 - useReducer와 Context를 이용한 상태관리
 - React 렌더링 최적화
-  - useMemo, React.memo, useCallback 활용
+  - useMemo, useCallback, React.memo, Custom Hooks 활용
 
 <br>
 

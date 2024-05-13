@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 import { useContactDispatch } from '../hooks/contact';
 import iconFavorite from '../assets/icon_favorite.png';
 import iconBlankFavorite from '../assets/icon_blank_favorite.png';
