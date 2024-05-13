@@ -68,7 +68,7 @@ li {
     box-sizing: border-box;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 371px) {
     .App {
         min-width: 330px;
         gap: 10px;
